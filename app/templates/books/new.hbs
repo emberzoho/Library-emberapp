@@ -1,0 +1,43 @@
+<div class="container">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="bookName">Book name</label>
+      <div class="col-sm-10">
+        {{input type="text" class="form-control" id="bookName" value=bookName placeholder="Enter book name" name="bookName"}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="author">Author</label>
+      <div class="col-sm-10">
+        {{input type="text" class="form-control" id="author" value=author placeholder="Enter author name" name="author"}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="dept">Department</label>
+      <div class="col-sm-10">
+        {{input type="text" class="form-control" value=dept id="dept" placeholder="Enter depatment" name="dept"}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pub">Publication</label>
+      <div class="col-sm-10">
+        {{input type="text" class="form-control" id="pub" value=pub placeholder="Enter publication" name="pub"}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="num">Num of Copies</label>
+      <div class="col-sm-10">
+        {{input type="number" class="form-control" id="num" value=num placeholder="Enter num of copies" name="num"}}
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button {{action 'addBook'}} class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+{{outlet}}

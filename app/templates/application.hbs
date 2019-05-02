@@ -1,0 +1,37 @@
+<!-- <h1>{{#link-to 'books.new'}}New Book{{/link-to}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      {{outlet}}
+    </div>
+  </div>
+</div> -->
+
+<div class="container bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light py-3" >
+                <a class="navbar-brand text-dark h2" href="index.html">
+                    LIBRARY MANAGEMENT SYSTEM
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-tabs align-items-lg-center text-uppercase pt-3 pt-lg-0 ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link">{{#link-to 'books'}} BOOKS {{/link-to}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">{{#link-to 'authors'}}AUTHOR{{/link-to}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">PUBLISHERS</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <br>
+        <br>
+
+{{outlet}}
+

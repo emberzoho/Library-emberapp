@@ -1,0 +1,128 @@
+{{outlet}}
+
+
+
+<div class="container mb-5">
+  <button type="button"  class="btn btn-outline-secondary btn-sm p-2" style="margin-left: 375px;" data-toggle="modal" data-target="#newbookmodal">ADD ENTRY</button>
+  <button type="button" class="btn btn-secondary btn-sm p-2" style="margin-left: 45px; margin-right:350px;" data-toggle="modal" data-target="#delbookmodal">DELETE ENTRY</button>
+</div>
+
+<div class="modal" id="newbookmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">NEW BOOK DETAILS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container">
+  			<form class="form-horizontal">
+  				<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="text" class="form-control" id="bookid" value=bookid placeholder="Enter book ID" name="bookid"}}
+      					</div>
+    			</div>
+    			<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="text" class="form-control" id="bookName" value=bookName placeholder="Enter book name" name="bookName"}}
+      					</div>
+    			</div>
+    			<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="text" class="form-control" id="author" value=author placeholder="Enter author name" name="author"}}
+      					</div>
+    			</div>
+    			<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="text" class="form-control" value=dept id="dept" placeholder="Enter depatment" name="dept"}}
+      					</div>
+    			</div>
+    			<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="text" class="form-control" id="pub" value=pub placeholder="Enter publication" name="pub"}}
+      					</div>
+    			</div>
+    			<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="number" class="form-control" id="num" value=num placeholder="Enter num of copies" name="num"}}
+      					</div>
+    			</div>
+    			<div class="form-group">        
+      				<div class="col-sm-offset-2 col-sm-10">
+        				<button {{action 'addBook'}} class="btn btn-primary">Submit</button>
+      				</div>
+    			</div>
+  			</form>
+		</div>
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="delbookmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">DELETE BOOK DETAILS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container">
+  			<form class="form-horizontal">
+  				<div class="form-group">
+      				
+      					<div class="col-sm-10">
+        					{{input type="text" class="form-control" id="delbookid" value=delbookid placeholder="Enter book ID" name="delbookid"}}
+      					</div>
+    			</div>
+    			<div class="form-group">        
+      				<div class="col-sm-offset-2 col-sm-10">
+        				<button {{action 'delBook'}} class="btn btn-primary">Submit</button>
+      				</div>
+    			</div>
+    		</form>
+		</div>
+	</div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+          <th>BOOKNAME</th>
+          <th>AUTHOR</th>
+          <th>PUBLICATION</th>
+          <th>DEPARTMENT</th>
+          <th>NUM OF COPIES</th>
+          </tr>
+        </thead>
+        {{#each this.model as |bookunit|}}
+        	<!-- <BookListing @book={{bookUnit}} /> -->
+        	<tr>
+		    	<td>{{bookunit.bookName}}</td>
+			    <td>{{bookunit.author}}</td>
+			    <td>{{bookunit.pub}}</td>
+			    <td>{{bookunit.dept}}</td>
+			    <td>{{bookunit.numofcopies}}</td> 
+			</tr>
+			
+		{{/each}}
+	</table>
+</div>
